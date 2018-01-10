@@ -1,0 +1,2 @@
+vagrant snapshot restore wlflyhost wlflyhost_backup
+pause

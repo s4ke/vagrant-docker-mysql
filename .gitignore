@@ -1,0 +1,5 @@
+.vagrant/
+mysqlinit/
+server-data/mysqldata/
+server-data/wildfly-logs/
+server-data/wildfly-deployments/

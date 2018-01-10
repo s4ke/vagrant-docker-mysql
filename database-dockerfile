@@ -1,0 +1,12 @@
+FROM mysql:5.7
+
+# change permissions so we can write to all directories
+# owned by the vagrant user in the owning vm
+RUN usermod -u 1000 mysql
+
+# Copy custom conf file(s)
+ADD mysqlconf/my.cnf /etc/mysql/conf.d/
+
+# Make the conf files not writeable so mysql will read them
+RUN chmod a-w /etc/mysql/conf.d/*
+

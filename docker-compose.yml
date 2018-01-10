@@ -1,0 +1,32 @@
+version: '2'
+
+services:
+  database:
+    container_name: "database"
+    hostname: database
+    restart: always
+    extends:
+      file: base.yml
+      service: base
+    build:
+      context: .
+      dockerfile: database-dockerfile
+    volumes:
+      - /vagrant/server-data/mysqldata:/var/lib/mysql:z
+      - /vagrant/mysqlinit:/docker-entrypoint-initdb.d
+    ports:
+      - 12346:3306
+      
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    extends:
+      file: base.yml
+      service: base
+    ports:
+      - 8182:80
+    volumes:
+      - /sessions
+    links:
+      - database:db
