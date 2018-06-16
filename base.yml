@@ -5,7 +5,7 @@ services:
     environment:
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
-      MYSQL_DATABASE: fmcprev
+      MYSQL_DATABASE: fmc
       MYSQL_ROOT_PASSWORD: supersecret
       MYSQL_ROOT_HOST: mywildfly
       
