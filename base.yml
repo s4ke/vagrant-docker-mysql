@@ -5,14 +5,6 @@ services:
     environment:
       MYSQL_USER: mysql
       MYSQL_PASSWORD: mysql
-      MYSQL_DATABASE: fmc
+      MYSQL_DATABASE: datacrawlingkraken
       MYSQL_ROOT_PASSWORD: supersecret
       MYSQL_ROOT_HOST: mywildfly
-      
-      WILDFLY_JDBC_URL: jdbc:mysql://db:3306/fmc?serverTimezone=UTC&zeroDateTimeBehavior=convertToNull&autoReconnect=true&useUnicode=true&characterEncoding=UTF-8
-      
-      WILDFLY_ADMIN: admin
-      WILDFLY_ADMIN_PW: adminsrule
-      WILDFLY_USER: fmcUser
-      WILDFLY_USER_PW: fmcUserPassword
-      WILDFLY_DEBUG: --debug 43974
