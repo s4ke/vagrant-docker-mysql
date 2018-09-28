@@ -33,8 +33,8 @@ config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
         vb.customize ["modifyvm", :id, "--cableconnected1", "on"]
   end
   
-  config.vm.network "forwarded_port", guest: 12346, host_ip: "127.0.0.1", host: 12346
-  config.vm.network "forwarded_port", guest: 8182, host_ip: "127.0.0.1", host: 8182
+  config.vm.network "forwarded_port", guest: 12346, host: 12346
+  config.vm.network "forwarded_port", guest: 8182, host: 8182
   
   config.vm.provision :docker
   config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true,
